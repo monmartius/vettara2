@@ -1,1 +1,2 @@
-common = require('./common.js');
+import "../scss/styles.scss";
+let common = require('./common.js');

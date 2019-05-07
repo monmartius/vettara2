@@ -30,6 +30,24 @@ if(process.env.NODE_ENV == "development"){
 
 }
 
+$('.top-menu__icon').on('click', function(){
+
+	if(!$('.top-menu__options').hasClass('active')){
+		
+		$('top-menu').addClass('active');
+		$('.top-menu__options').addClass('active').slideDown();
+		$('.top-menu__icon').addClass('active');
+	}
+	else{
+
+		$('top-menu').removeClass('active');
+		$('.top-menu__options').removeClass('active').slideUp();
+		$('.top-menu__icon').removeClass('active')
+	}
+})
+
+
+
 window.global_variables = {};
 
 window.global_variables.breakpoints = breakpoints;
