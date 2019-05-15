@@ -96,32 +96,60 @@ body{
 
 .top-menu{
 
-	background-color: $green;
+	// background-color: $green;
 
-	*{
-		outline: 1px solid red;
-	}
+	// *{
+	// 	outline: 1px solid red;
+	// }
 
-	outline: 1px solid red;
+	// outline: 1px solid red;
 
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
 	padding-top: 30px;
 
 	width: 100%;
 	display: flex;
+
+
+	background-color: transparent;
+
+
+ transition: background-color .5s 0s linear;
+-moz-transition: background-color .5s 0s linear;
+-webkit-transition: background-color .5s 0s linear;
+-o-transition: background-color .5s 0s linear;
+
+
 	
 }
 
+
+.top-menu.active{
+
+	background-color: $green-dark;
+
+
+	 transition: background-color .5s 0s linear;
+	-moz-transition: background-color .5s 0s linear;
+	-webkit-transition: background-color .5s 0s linear;
+	-o-transition: background-color .5s 0s linear;
+
+
+}
+
+
 .top-menu__icon{
+
+	z-index: 1;
 
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	background-color: red;
+	// background-color: red;
 	right: 0;
 	margin-right: 15px;
 	cursor: pointer;
@@ -129,12 +157,18 @@ body{
 	font-size: 8px;
 	text-align: center;
 	padding: 5px;
+
+	background-image: url("../images/menu-open.svg");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: 50% 50%;
 }
 
-.top-menu__options.active{
+.top-menu__icon.active{
 
-	// display: flex;
+	background-image: url("../images/menu-close.svg");	
 }
+
 
 .top-menu__options{
 
@@ -143,23 +177,37 @@ body{
 	justify-content: flex-end;
 	padding: 0;
 	margin: 0;
-	margin-top: 50px;
+	padding-top: 50px;
 	display: none;
-
-	&:before{
-
-		content: " ";
-		background-image: url("");
-	}
+	padding-top: 80px;
+	padding-bottom: 30px;
 
 	&>li{
+
+		&:first-child{
+
+			border-top: 1px solid $green;
+
+		}
 
 		list-style: none;
 		position: relative;
 		display: block;
 		height: 50px;
-		
 
+		border-bottom: 1px solid $green;
+		
+		&:hover{
+
+			background-color: $blue-dark;
+			 transition: background-color .3s 0s linear;
+			-moz-transition: background-color .3s 0s linear;
+			-webkit-transition: background-color .3s 0s linear;
+			-o-transition: background-color .3s 0s linear;
+
+
+		}
+		
 		// margin-left: 15px;
 
 		// &:hover:after{
@@ -185,6 +233,8 @@ body{
 			text-decoration: none;
 			color: white;
 
+			text-transform: uppercase;
+
 		}
 	}
 
@@ -204,9 +254,20 @@ body{
 }
 
 
+
+
+
 @include media-breakpoint-up(md){
 
+	.top-menu{
 
+		background-color: transparent;
+	}
+
+	.top-menu.active{
+
+		background-color: transparent;
+	}
 
 	.top-menu__icon{
 
@@ -236,6 +297,18 @@ body{
 			list-style: none;
 			position: relative;
 			margin-left: 20px;
+
+			border: 0;
+
+			&:first-child{
+				
+				border: 0;
+			}
+
+			&:hover{
+
+				background-color: transparent;
+			}
 
 			&:hover:after{
 				content: " ";

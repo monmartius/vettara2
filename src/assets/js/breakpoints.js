@@ -12,6 +12,7 @@ function objToArrayObjectsKeyValue(obj){
 
 
 var $window = $(window);
+let win = window;
 
 var	settings = {
 		'sm' : 576,
@@ -73,6 +74,7 @@ let breakpoints = {
 
 						this.previousBreakpoint = this.breakpoint;
 						this.breakpoint = this.breakpointOnResize;
+
 
 						var eventId = 'breakpoint.changed.' + this.previousBreakpoint + '>' + this.breakpoint;
 						$window.trigger('breakpoint.changed');
@@ -175,6 +177,7 @@ let breakpoints = {
 				'widthHeight' : 'width: ' + width + 'px; ' + ' height: ' + height + 'px; '
 		}
 	}
+
 }; 
 
 

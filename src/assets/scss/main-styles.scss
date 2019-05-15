@@ -1,0 +1,132 @@
+@import "styles.scss";
+
+
+
+.block-info{
+
+    color: $green;
+    padding-bottom: 50px;
+}
+
+.block-info__slogan{
+
+
+}
+
+.block-info__clinic-name{
+
+	padding-left: 10px;
+	padding-right: 10px;
+	
+
+	line-height: 130%;
+	// background-color: red;
+
+	// padding-right: 15px;
+	text-align: center;
+	font-size: 13px;
+	color: white;
+	min-width: 100%;
+	font-weight: normal;	
+}
+
+.block-info__clinic-text{
+
+
+	padding-left: 10px;
+	padding-right: 10px;
+	
+
+	line-height: 130%;
+	// background-color: red;
+
+	// padding-right: 15px;
+	text-align: center;
+	font-size: 13px;
+	color: white;
+	min-width: 100%;
+	font-weight: normal;
+}
+
+.block-info__phones{
+
+	position: relative;
+	padding-top: 10px;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	span{
+
+		font-weight: bold;
+		white-space: nowrap;
+		display: inline-block;
+		padding-right: 5px;
+		
+		&:after{
+			content: ", ";
+		}
+
+		&:last-child:after{
+
+			content: "";
+		}
+
+	}
+
+}
+
+
+.block-info__phones:before{
+
+			display: inline-block;
+			position: relative;
+			top: 5px;
+			// left: 5px;
+			width: 20px;
+			height: 20px;
+
+			background-image: url(../images/phone.svg);
+			background-position: 0 45%;
+			background-size: 15px;
+			background-repeat: no-repeat;
+			content: " ";
+}	
+
+.block-info__address{}
+
+.block-info__shedule{}
+
+.block-info__siocial-media{}
+
+
+.block-info__address, .block-info__shedule, .block-info__siocial-medi{
+
+	display: none;
+}
+
+
+
+
+	.address, .shedule, .social-media{
+
+		display: none;
+	}
+
+
+	.block-clinic-name{
+
+
+
+
+		.clinic{
+			display: inline;
+
+		}	
+
+		.name{
+
+			display: inline;
+
+		}
+	}

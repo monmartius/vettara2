@@ -30,21 +30,36 @@ if(process.env.NODE_ENV == "development"){
 
 }
 
-$('.top-menu__icon').on('click', function(){
+$('.top-menu__icon').on('click', function(event){
+
+	event.stopPropagation();
 
 	if(!$('.top-menu__options').hasClass('active')){
-		
-		$('top-menu').addClass('active');
-		$('.top-menu__options').addClass('active').slideDown();
+
+		$('.top-menu').addClass('active');
+		$('.top-menu__options').addClass('active').slideDown(500);
 		$('.top-menu__icon').addClass('active');
 	}
 	else{
 
-		$('top-menu').removeClass('active');
-		$('.top-menu__options').removeClass('active').slideUp();
+		$('.top-menu').removeClass('active');
+		$('.top-menu__options').removeClass('active').slideUp(500);
 		$('.top-menu__icon').removeClass('active')
 	}
 })
+
+
+$(document).on('click', function(e){
+
+
+
+	if($('.top-menu__options').hasClass('active')){
+
+		$('.top-menu').removeClass('active');
+		$('.top-menu__options').removeClass('active').slideUp(500);
+		$('.top-menu__icon').removeClass('active')
+	}
+});
 
 
 
