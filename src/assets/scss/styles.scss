@@ -30,6 +30,25 @@ body{
 
 }
 
+
+.comma-after:after{
+
+	content: ",";
+}
+
+h1, h2, h3, h4, h5, h6{
+
+
+	width: 100%;
+	text-align: center;
+}
+
+h2{
+	font-size: 40px;
+	margin-top: 45px;
+	margin-bottom: 30px;
+}
+
 .site-header{
 
 	width: 100%;
@@ -50,6 +69,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 }
 
 .fullscreen-background_image{
@@ -123,6 +143,7 @@ body{
 -webkit-transition: background-color .5s 0s linear;
 -o-transition: background-color .5s 0s linear;
 
+	z-index: 1;
 
 	
 }
@@ -183,6 +204,10 @@ body{
 	padding-bottom: 30px;
 
 	&>li{
+		
+		font-size: 14px;
+		position: relative;
+		top: 3px;
 
 		&:first-child{
 
@@ -334,4 +359,16 @@ body{
 
 	}
 
+}
+
+
+.ambulance__service-list{
+	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li{
+
+	}
 }

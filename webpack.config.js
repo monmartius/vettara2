@@ -13,6 +13,9 @@ console.log('');
 console.log('process.env.NODE_ENV');
 console.log(process.env.NODE_ENV);
 console.log('');
+console.log('process.env.DEBUG_INFO');
+console.log(process.env.DEBUG_INFO);
+console.log('');
 console.log('===============================================');
 
 module.exports = {
@@ -225,7 +228,7 @@ module.exports = {
 		//   'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
 		// }),	
 
-		new Webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']),
+		new Webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG_INFO']),
 
 		// new OptimizeCCSAssetsPlugin({
 		// 	assetNameRegExp: /\.css$/g,

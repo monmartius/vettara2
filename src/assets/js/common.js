@@ -2,7 +2,9 @@ require('bootstrap');
 let breakpoints = require('./breakpoints.js');
 
 
-if(process.env.NODE_ENV == "development"){
+
+// if(process.env.NODE_ENV == "development"){
+if(process.env.DEBUG_INFO !== "off"){
 
 	let displayInfo = require('./display-info.js');
 
@@ -15,7 +17,7 @@ if(process.env.NODE_ENV == "development"){
 		'background-color': 'rgba(255, 0, 0, .6)',
 		'color': 'white',
 		'right': '20px',
-		'width' : '80px',
+		'width' : '160px',
 		'bottom' : 30,
 		'font-size' : '12px',
 	});
@@ -23,7 +25,13 @@ if(process.env.NODE_ENV == "development"){
 
 	$(window).on('resize', function(){
 
-		displayInfo.html('size: ' + breakpoints.onPoint() + '<br>'+ breakpoints.windowSizePx().widthHeight);
+		let width = breakpoints.windowSizePx().width;
+		let height = breakpoints.windowSizePx().height;
+
+		displayInfo.html('size: ' + breakpoints.onPoint() 
+			+ '<br>'+ breakpoints.windowSizePx().widthHeight 
+			+ '<br>aspect-ratio: ' + width + '/' + height
+			+ ' : ' + Math.round( width/height*100)/100 + "");
 	});
 
 
