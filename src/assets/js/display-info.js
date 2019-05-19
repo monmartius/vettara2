@@ -1,29 +1,29 @@
-let displayInfoBlock = $('<div></div>');
+function displayInfoBlockConstructor() {
 
-displayInfoBlock.addClass('display-info');
+	let $displayInfoBlock = $('<div></div>');
 
-displayInfoBlock.css({
+	// $displayInfoBlock.addClass('display-info');
 
-	'text-align': 'center',
-	position: 'fixed',
-	width: '100%',
-	color: 'red',
-	'font-size': '20px',
-	bottom: '0',
-	margin: 'auto'
-});
+	$displayInfoBlock.css({
 
-displayInfoBlock.before = "<h1>";
-displayInfoBlock.after = "</h1>";
+		'text-align': 'center',
+		position: 'fixed',
+		width: '100%',
+		color: 'red',
+		'font-size': '20px',
 
-displayInfoBlock.cssStyles = {};
+		margin: 'auto'
+	});
+
+	// displayInfoBlock.before = "<h1>";
+	// displayInfoBlock.after = "</h1>";
+
+	// displayInfoBlock.cssStyles = {};
 
 
-$('body').append(displayInfoBlock);
+	$('body').append($displayInfoBlock);
 
-displayInfoBlock.out = function(msg){
-
-	this.html(msg);
+	return $displayInfoBlock
 }
 
-module.exports = displayInfoBlock;
+module.exports = displayInfoBlockConstructor;

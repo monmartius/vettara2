@@ -41,12 +41,19 @@ h1, h2, h3, h4, h5, h6{
 
 	width: 100%;
 	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 h2{
 	font-size: 40px;
 	margin-top: 45px;
-	margin-bottom: 30px;
+	margin-bottom: 45px;
+
+	@media (max-width: 320px){
+
+		font-size: 30px;
+	}
 }
 
 .site-header{
@@ -361,14 +368,3 @@ h2{
 
 }
 
-
-.ambulance__service-list{
-	
-	margin: 0;
-	padding: 0;
-	list-style: none;
-
-	li{
-
-	}
-}

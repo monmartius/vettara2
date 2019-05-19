@@ -6,7 +6,8 @@ let breakpoints = require('./breakpoints.js');
 // if(process.env.NODE_ENV == "development"){
 if(process.env.DEBUG_INFO !== "off"){
 
-	let displayInfo = require('./display-info.js');
+	let displayInfo = new require('./display-info.js')();
+	let displayInfo2 = new require('./display-info.js')();
 
 
 
@@ -19,8 +20,40 @@ if(process.env.DEBUG_INFO !== "off"){
 		'right': '20px',
 		'width' : '160px',
 		'bottom' : 30,
+		// 'bottom' : '0',
 		'font-size' : '12px',
 	});
+
+
+ 	displayInfo2.css({
+
+		'background-color': 'rgba(255, 255, 0, .6)',
+		'color': 'white',
+		'right': '20px',
+		'width' : '160px',
+		'top' : 30,
+		// 'left' : 30,
+		'font-size' : '12px',
+	});
+
+ 	function t(){
+
+ 		var seconds = 0;
+
+ 		return function(){
+
+ 			return seconds++;
+
+ 		}
+ 	}
+
+ 	timer = t();
+
+	setInterval(function(){
+
+		displayInfo2.html(timer);		
+		// displayInfo2.html(displayInfo2 === displayInfo);		
+	}, 1000 )
 
 
 	$(window).on('resize', function(){
