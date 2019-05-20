@@ -270,6 +270,11 @@
 
 
 #popular-services{
+
+	*{
+		outline: 1px solid red;
+	}
+
 	position: relative;
 
 	padding-bottom: 40px;
@@ -287,7 +292,7 @@
 	  background-size: 100% 100%;
 	  transform: rotate(180deg);
 	  z-index: -1;
-}
+	}
 }
 
 #popular-services-slider{
@@ -297,21 +302,69 @@
 }
 
 .popular-services-slider-slide{
+
+// background-color: red;
+
+// 	outline: 1px solid green;
+
+// 	*{
+// 		outline: 1px solid blue;
+// 	}
+
 	width: 100%;
-	background-color: red;
-}
-
-.green{
-
-	background-color: green;
-}
-
-.popular-services-slider-slide-illustration{
-
-	width: 50%;
 	position: relative;
 
-	padding-top: 50%;
+	text-align: center;
+
+	// background-color: red;
+}
+
+
+.popular-services-slider-slide-a-wrapper{
+	display: block;
+	position: relative;
+	text-decoration: none;
+	// width: 100%;
+	// height: 100%;
+}
+
+.popular-services-slider-slide-a-wrapper:hover{
+
+	text-decoration: none;
+}
+
+.popular-services-slider-slide__service-title{
+
+	color: $green-light1;
+	font-size: 22px;
+}
+
+
+.popular-services-slider-slide__description{
+
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 60px);
+	font-size: 13px;
+	color: white;
+	text-align: left;
+	// background-color: rgba(100,100,100,.6);
+}
+
+
+.popular-services-slider-slide-illustration{
+	margin: auto;
+	width: calc(100% - 30px);
+	position: relative;
+
+	padding-top: calc(100% - 30px);
+
+
+
+
 
 	border-radius:50%;
 	overflow:hidden;
@@ -325,19 +378,29 @@
 	}
 }
 
-.duration3s{
+.popular-services-slider-slide.active 
+.popular-services-slider-slide-illustration{
+
+	background-color: $blue-dark;
+
+	img{
+		opacity: .5;
+	}
+}
+
+.animation-duration{
   -webkit-animation-duration: 3s;
   -o-animation-duration: 3s;
   -moz-animation-duration: 3s;
   animation-duration: 3s;
 }
 
-.delay1s{
-  -webkit-animation-delay: 3s;
-  -o-animation-delay: 3s;
-  -moz-animation-delay: 3s;
-  animation-delay: 3s;
-}
+// .animation-delay{
+//   -webkit-animation-delay: 3s;
+//   -o-animation-delay: 3s;
+//   -moz-animation-delay: 3s;
+//   animation-delay: 3s;
+// }
 
 .animation-paused{
 
