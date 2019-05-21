@@ -23,6 +23,11 @@ function displayInfoBlockConstructor() {
 
 	$('body').append($displayInfoBlock);
 
+	$displayInfoBlock.on('click', function(){
+
+		$displayInfoBlock.detach();
+	})
+
 	return $displayInfoBlock
 }
 

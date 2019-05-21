@@ -18,6 +18,27 @@ let $popularServicesSlider = $('#popular-services-slider');
 
 $popularServicesSlider.animationEffect = 'bounceIn';
 
+
+$popularServicesSlider.$innerSliders = $('.popular-services-slider-slide__description', $popularServicesSlider);
+
+console.log($popularServicesSlider.$innerSliders);
+
+$popularServicesSlider.$innerSliders.slick({
+
+	infinite: true,
+	speed: 1000,
+	// autoplay: true,
+	autoplaySpeed: 2000,
+	// variableWidth: false,
+	adaptiveHeight: false	
+});
+
+$('.popular-services-slider-slide-a-wrapper').on('click', function(e){
+
+	e.preventDefault();
+
+});
+
 $popularServicesSlider.init = function (){
 
 	$popularServicesSlider.slick({
@@ -25,7 +46,7 @@ $popularServicesSlider.init = function (){
 			// dots: true,
 			infinite: true,
 			speed: 1000,
-			autoplay: true,
+			// autoplay: true,
 			autoplaySpeed: 4000,
 			// variableWidth: false,
 			adaptiveHeight: false
@@ -34,58 +55,58 @@ $popularServicesSlider.init = function (){
 
 	});
 
-	let $slides = this.slick('getSlick').$slides;
+	// let $slides = this.slick('getSlick').$slides;
 	
-	for(let i = 0 ; i < $slides.length ; i++){
+	// for(let i = 0 ; i < $slides.length ; i++){
 
-		let $animatedElements = $('.element-animated', $slides[i]);
+	// 	let $animatedElements = $('.element-animated', $slides[i]);
 
 
-		$animatedElements.addClass('animation-duration');
-		$animatedElements.addClass('animation-paused');			
-		$animatedElements.addClass('animation-delay');			
-		$animatedElements.addClass(this.animationEffect);	
+	// 	$animatedElements.addClass('animation-duration');
+	// 	$animatedElements.addClass('animation-paused');			
+	// 	$animatedElements.addClass('animation-delay');			
+	// 	$animatedElements.addClass(this.animationEffect);	
 
-		$popularServicesSlider.slick('slickAdd', $slides[i]);
-	}
+	// 	$popularServicesSlider.slick('slickAdd', $slides[i]);
+	// }
 
 }
 
 
-// $popularServicesSlider.init();
+$popularServicesSlider.init();
 
-$popularServicesSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+// $popularServicesSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
 
-	let $slides = $('#popular-services-slider .slick-slide');
+// 	let $slides = $('#popular-services-slider .slick-slide');
 
-	for(let i = 0 ; i < $slides.length; i++){
-
-
-		let $animatedElements = $('.element-animated', $slides[i]);
-		let slideIndex = $($slides[i]).hasClass('slick-current');
-
-		if(!$($slides[i]).hasClass('slick-current')){
-
-			$animatedElements.removeClass('animation-running')
-				// .removeClass('s-current')
-				.addClass('animation-paused')		
-				.addClass('animation-delay')		
-				.each(restartAnimation);
-		}
-	}
-});
+// 	for(let i = 0 ; i < $slides.length; i++){
 
 
-function restartAnimation(index, element){
- 	var newElement = element.cloneNode(true);
-    element.parentNode.replaceChild(newElement, element);
-}
+// 		let $animatedElements = $('.element-animated', $slides[i]);
+// 		let slideIndex = $($slides[i]).hasClass('slick-current');
+
+// 		if(!$($slides[i]).hasClass('slick-current')){
+
+// 			$animatedElements.removeClass('animation-running')
+// 				// .removeClass('s-current')
+// 				.addClass('animation-paused')		
+// 				.addClass('animation-delay')		
+// 				.each(restartAnimation);
+// 		}
+// 	}
+// });
 
 
-$popularServicesSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+// function restartAnimation(index, element){
+//  	var newElement = element.cloneNode(true);
+//     element.parentNode.replaceChild(newElement, element);
+// }
 
-	let $animatedElements = $('.element-animated', slick.$slides[currentSlide])
-		.removeClass('animation-paused')
-		.addClass('animation-running')			
-		.each(restartAnimation);
-});
+
+// $popularServicesSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+
+// 	let $animatedElements = $('.element-animated', slick.$slides[currentSlide])
+// 		.removeClass('animation-paused')
+// 		.addClass('animation-running')			
+// 		.each(restartAnimation);
+// });
