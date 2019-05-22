@@ -19,7 +19,7 @@ let $popularServicesSlider = $('#popular-services-slider');
 $popularServicesSlider.animationEffect = 'bounceIn';
 
 
-$popularServicesSlider.$innerSliders = $('.popular-services-slider-slide__description', $popularServicesSlider);
+$popularServicesSlider.$innerSliders = $('.popular-services-slide__description', $popularServicesSlider);
 
 console.log($popularServicesSlider.$innerSliders);
 
@@ -33,7 +33,7 @@ $popularServicesSlider.$innerSliders.slick({
 	adaptiveHeight: false	
 });
 
-$('.popular-services-slider-slide-a-wrapper').on('click', function(e){
+$('.popular-services__slide').on('click', function(e){
 
 	e.preventDefault();
 
