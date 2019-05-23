@@ -309,7 +309,9 @@
 
 	overflow: hidden;
 
+
 }
+
 
 
 .popular-services__slide{
@@ -353,10 +355,7 @@
 
 	// overflow: hidden;
 
-	&>img{
-		
-		display: none;
-	}
+
 }
 
 
@@ -371,6 +370,32 @@
 	// top: 0;
 	// left: 0;
 }
+
+
+.popular-services-slide__description,
+.popular-services-slide__description>.slick-list.draggable,
+.popular-services-slide__description>.slick-list.draggable>.slick-track,
+.popular-services-slide__description>.slick-list.draggable>.slick-track>.slick-slide,
+.popular-services-slide__description>.slick-list.draggable>.slick-track>.slick-slide>div{
+
+	height: 100%;
+	overflow: hidden;
+}
+
+
+
+
+.popular-services-slide__description,
+.popular-services-slide__description>.slick-list.draggable,
+.popular-services-slide__description>.slick-list.draggable>.slick-track,
+.popular-services-slide__description>.slick-list.draggable>.slick-track>.slick-slide,
+.popular-services-slide__description>.slick-list.draggable>.slick-track>.slick-slide>div{
+
+	height: 100%;
+	overflow: hidden;
+}
+
+
 
 
 .popular-services-slide__description{
@@ -398,23 +423,31 @@
 	}
 }
 
+.popular-services-slide__description{
 
+
+}
 
 .popular-services-description__slide{
 
 	background-color: rgba(0,0,255,.5);
 	height: 100%;
 	color: white;
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
 
 	&:before, &:after{
 		
-		РАБОТАТЬ БУДЕШЬ? к
-кинь смс на 89039231611 как закончишь
-вацап есть?
-да
-по этому же номеру?
-да
-Ок.	}
+		display: block;
+		content: "cc";
+		color: black;
+		background-color: white;
+		height: 30px;
+		position: absolute;
+		width: 10%;
+	}
 }
 
 
