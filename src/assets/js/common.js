@@ -49,11 +49,11 @@ if(process.env.DEBUG_INFO !== "off"){
 
  	timer = t();
 
-	setInterval(function(){
+	// setInterval(function(){
 
-		displayInfo2.html(timer);		
-		// displayInfo2.html(displayInfo2 === displayInfo);		
-	}, 1000 )
+	// 	displayInfo2.html(timer);		
+	// 	// displayInfo2.html(displayInfo2 === displayInfo);		
+	// }, 1000 )
 
 
 	$(window).on('resize', function(){

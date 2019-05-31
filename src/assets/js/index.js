@@ -4,7 +4,7 @@ let common = require('./common.js');
 
 let wow = require('wowjs');
 
-let displayInfo = new require('./display-info.js')();
+// let displayInfo = new require('./display-info.js')();
 
 require('slick-carousel');
 require('slick-carousel/slick/slick.scss');
@@ -23,15 +23,15 @@ $popularServicesSlider.$innerSliders = $('.popular-services-slide__description',
 
 console.log($popularServicesSlider.$innerSliders);
 
-$popularServicesSlider.$innerSliders.slick({
+// $popularServicesSlider.$innerSliders.slick({
 
-	infinite: true,
-	speed: 1000,
-	// autoplay: true,
-	autoplaySpeed: 2000,
-	// variableWidth: false,
-	adaptiveHeight: false	
-});
+// 	infinite: true,
+// 	speed: 1000,
+// 	// autoplay: true,
+// 	autoplaySpeed: 2000,
+// 	// variableWidth: false,
+// 	adaptiveHeight: false	
+// });
 
 $('.popular-services__slide').on('click', function(e){
 
@@ -41,19 +41,19 @@ $('.popular-services__slide').on('click', function(e){
 
 $popularServicesSlider.init = function (){
 
-	$popularServicesSlider.slick({
+	// $popularServicesSlider.slick({
 
-			// dots: true,
-			infinite: true,
-			speed: 1000,
-			// autoplay: true,
-			autoplaySpeed: 4000,
-			// variableWidth: false,
-			adaptiveHeight: false
-			// ,
-			// vertical: true
+	// 		// dots: true,
+	// 		infinite: true,
+	// 		speed: 1000,
+	// 		// autoplay: true,
+	// 		autoplaySpeed: 4000,
+	// 		// variableWidth: false,
+	// 		adaptiveHeight: false
+	// 		// ,
+	// 		// vertical: true
 
-	});
+	// });
 
 	// let $slides = this.slick('getSlick').$slides;
 	
