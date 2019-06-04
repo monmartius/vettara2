@@ -92,6 +92,26 @@ let breakpoints = {
 
 	}, 
 
+	onResize : function(width){
+
+		_this = this;
+
+			console.log('in');
+		$window.on('resize', function(){
+
+			console.log('on!');
+
+			if(_this.windowSizePx().width == width){
+
+
+				$window.trigger('inin');
+				// alert();
+				 // + width);				
+			}
+		});
+		
+	},
+
 
 	onPoint : function(){
 		

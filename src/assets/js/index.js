@@ -4,6 +4,8 @@ let common = require('./common.js');
 
 let wow = require('wowjs');
 
+let breakpoints = window.global_variables.breakpoints;
+
 // let displayInfo = new require('./display-info.js')();
 
 require('slick-carousel');
@@ -11,7 +13,7 @@ require('slick-carousel/slick/slick.scss');
 require('slick-carousel/slick/slick-theme.scss');
 
 new wow.WOW().init();
-console.log(wow);
+// console.log(wow);
 
 let $popularServicesSlider = $('#popular-services-slider');
 
@@ -21,7 +23,7 @@ $popularServicesSlider.animationEffect = 'bounceIn';
 
 $popularServicesSlider.$innerSliders = $('.popular-services-slide__description', $popularServicesSlider);
 
-console.log($popularServicesSlider.$innerSliders);
+// console.log($popularServicesSlider.$innerSliders);
 
 // $popularServicesSlider.$innerSliders.slick({
 
@@ -38,6 +40,22 @@ $('.popular-services__slide').on('click', function(e){
 	e.preventDefault();
 
 });
+
+// alert('onResize');
+
+breakpoints.onResize(700);
+
+$(window).on('inin', function(){
+
+	console.log('================================')
+})
+
+$(window).on('breakpoint.changed', function(){
+
+	console.log(breakpoints.onPoint());	
+	console.log(breakpoints.previousBreakpoint);	
+});
+
 
 $popularServicesSlider.init = function (){
 
@@ -71,6 +89,8 @@ $popularServicesSlider.init = function (){
 	// }
 
 }
+
+
 
 
 $popularServicesSlider.init();
