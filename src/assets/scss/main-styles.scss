@@ -1,6 +1,9 @@
 @import "styles.scss";
 @import "~wowjs/css/libs/animate.css";
 
+// *{
+// 	outline: 1px solid red;
+// }
 
 .block-info{
 
@@ -169,7 +172,25 @@
 }
 
 
+
+
 @media (max-height: 320px){
+
+	.block-info__clinic-text{
+
+		display: block;
+	}
+
+	.block-info__phones{
+
+
+		padding-top: 0px;
+		font-size: 12px;
+
+	}
+}
+
+@media (max-height: 240px){
 
 	.block-info__clinic-text{
 
@@ -473,6 +494,29 @@
 		// flex-basis: 3%;
 		// padding-bottom: calc((100vw - 240px)*(60 - 40)/(1280 - 240)  + 40px);
 		font-size: calc(((100vw - 240px)*(25 - 20)/(1280 - 240)  + 20px));
+
+			@media (max-height: 400px){
+
+				padding-bottom: 1vh;
+				padding-top: 5vh;
+
+				font-size: 5vh;
+
+				// padding-top: 25px;
+				// padding-bottom: 10px;
+			}
+
+			@media (max-height: 300px){
+
+				font-size: 5vh;
+			}	
+			@media (max-height: 240px){
+
+				font-size: calc(4vh + 4px);
+				// font-size: 18px;
+			}			
+
+		// font-size: calc(1vw);
 	}
 
 	.popular-services-slide__description{
@@ -486,17 +530,29 @@
 		flex-shrink: 1;
 
 		&>div{
+
+
+				padding-bottom: 4vh;
+				padding-top: 4vh;
+
+
 			
+			// font-size: calc(1 / 1vh + 1px);
 			font-size: calc(((100vw - 240px)*(25 - 20)/(1280 - 240)  + 20px));
 
 			@media (max-height: 370px){
 
-				font-size: 18px;
+				// font-size: 18px;
+				font-size: 4.5vh;
 			}
 
 			@media (max-height: 300px){
 
-				font-size: 15px;
+				font-size: 5vh;
+			}	
+			@media (max-height: 240px){
+
+				font-size: 5vh;
 			}			
 		}
 	}
@@ -564,6 +620,434 @@
 
 // }
 
+
+
+
+
+
+.facts-about-clinic{
+	
+
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.facts-about-clinic__fact{
+
+	display: block;
+	padding: 15px;
+	margin-bottom: 15px;
+	width: 80%;
+	text-align: center;
+	// flex-shrink: 0;
+	
+}
+
+.facts-about-clinic__fact span:nth-child(1){
+	display: block;
+	height: 80px;
+	width: 100%;
+	background-color: $green-dark;
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	margin-bottom: 15px;
+}
+
+
+
+.facts-about-clinic__fact span:nth-child(2){
+	display: block;
+	width: 100%;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.facts-about-clinic__fact span:nth-child(3){
+	display: block;
+	width: 100%;
+	font-size: 20px;
+}
+
+
+@media (min-width: 480px){
+
+	.facts-about-clinic__fact{
+
+		width: calc(45% - 30px);
+		margin-left: 15px;
+		margin-right: 15px;
+	
+	}
+}
+
+@include media-breakpoint-up(md){
+
+
+	.facts-about-clinic__fact{
+
+		width: 33%;
+	
+	}
+
+}
+
+#questions{
+
+	// background-color: $blue-dark2;
+	color: white;
+
+
+	padding-bottom: 40px;
+
+
+	position: relative;
+	text-align: center;
+
+	&:before {
+		top: 0;
+		left: 0;
+		content: " ";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		background: url("../images/green-blue-gradient.png") 0 0 repeat-x;
+
+		background-size: 100% 100%;
+		transform: rotate(180deg);
+		z-index: -1;
+	}
+
+
+
+}
+
+.question-block{
+
+	position: relative;
+	width: calc(100% - 60px);
+	margin: auto;
+
+	margin-bottom: 30px;
+
+	&:before {
+
+		top: 0px;
+		left: 0px;
+		content: " ";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		background: url("../images/green-blue-gradient.png") 0 0 repeat-x;
+
+		background-size: 100% 100%;
+		// transform: rotate(180deg);
+		z-index: -1;
+	}
+
+
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
+	// width: 100%;
+
+	text-align: center;
+
+}
+
+.question-block__question{
+
+	padding-top: 30px;
+
+	text-transform: uppercase;
+	font-weight: bold;
+
+	&>span{
+
+		display: block;
+	}
+
+	&>span:nth-child(1){
+
+		font-size: 10vw;
+		line-height: 8vw;
+	}
+
+	&>span:nth-child(2){
+
+		font-size: 15vw;
+		line-height: 15vw;
+	}
+
+	&>span:nth-child(3){
+
+		font-size: 7vw;
+		font-weight: normal;
+
+	}
+}
+
+#dog > div > span:nth-child(2){
+
+	font-size: 13.8vw;
+}
+
+.question-block__image{
+
+	img{
+
+		width: 80%;
+	}
+}
+
+@media (min-width: 480px){
+
+
+	.question-block{
+
+		// height: 80vh;
+		display: flex;
+		padding-top: 0;
+	}
+
+
+	.question-block__image{
+
+		width: 40%;
+
+		padding-left: 15px;
+		padding-top: 30px;
+
+		flex-shrink: 0;
+
+		img{
+
+			width: 100%;
+		}
+	}
+
+
+
+	.question-block__question{
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 45px;
+		// flex-grow: 1;
+
+		text-transform: uppercase;
+		font-weight: bold;
+
+		&>span{
+
+			display: block;
+		}
+
+		&>span:nth-child(1){
+
+			font-size: 36px;
+			line-height: 45px;
+		}
+
+		&>span:nth-child(2){
+
+			font-size: 54px;
+			line-height: 44px;
+		}
+
+		&>span:nth-child(3){
+
+			font-weight: normal;
+			font-size: 20px;
+			line-height: 50px;
+
+		}
+	}
+
+	#dog > div > span:nth-child(2){
+
+		font-size: 49px;
+	}
+
+}
+
+@include media-breakpoint-up(md){
+
+	.question-block{
+
+		// display: block;	
+		width: calc(50% - 30px);	
+		// height: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	#questions>*>.row{
+		display: flex;
+		align-items: stretch;
+
+	}
+
+
+
+
+	.question-block__question{
+
+
+
+		&>span{
+
+			display: block;
+		}
+
+		&>span:nth-child(1){
+
+			font-size: 27px;
+			line-height: 35px;
+		}
+
+		&>span:nth-child(2){
+
+			font-size: 40px;
+			line-height: 40px;
+		}
+
+		&>span:nth-child(3){
+
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 50px;
+
+		}
+	}
+
+	#dog > div > span:nth-child(2){
+
+		font-size: 38px;
+		line-height: 38px;
+	}
+
+
+
+
+
+}
+
+
+
+@include media-breakpoint-up(lg){
+
+	.question-block{
+
+		// display: block;	
+		width: calc(50% - 30px);	
+		// height: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	#questions>*>.row{
+		display: flex;
+		align-items: stretch;
+
+	}
+
+
+
+
+	.question-block__question{
+
+
+
+		&>span{
+
+			display: block;
+		}
+
+		&>span:nth-child(1){
+
+			font-size: 35px;
+			line-height: 50px;
+		}
+
+		&>span:nth-child(2){
+
+			font-size: 52px;
+			line-height: 50px;
+		}
+
+		&>span:nth-child(3){
+
+			font-weight: normal;
+			font-size: 25px;
+			line-height: 50px;
+
+		}
+	}
+
+	#dog > div > span:nth-child(2){
+
+		font-size: 48px;
+		line-height: 50px;
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@include media-breakpoint-up(xl){
+
+
+
+	.question-block__question{
+
+
+		&>span:nth-child(1){
+
+			font-size: 45px;
+			line-height: 55px;
+		}
+
+		&>span:nth-child(2){
+
+			font-size: 68px;
+			line-height: 70px;
+		}
+
+		&>span:nth-child(3){
+
+			font-weight: normal;
+			font-size: 25px;
+			line-height: 50px;
+
+		}
+	}
+
+	#dog > div > span:nth-child(2){
+
+		font-size: 60px;
+		line-height: 70px;
+	}
+
+
+}
 
 
 

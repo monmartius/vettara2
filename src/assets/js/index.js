@@ -43,35 +43,36 @@ $('.popular-services__slide').on('click', function(e){
 
 // alert('onResize');
 
-breakpoints.onResize(700);
+// breakpoints.onResize(700);
 
-$(window).on('inin', function(){
+// $(window).on('inin', function(){
 
-	console.log('================================')
-})
+// 	console.log('================================')
+// })
 
-$(window).on('breakpoint.changed', function(){
+// $(window).on('breakpoint.changed', function(){
 
-	console.log(breakpoints.onPoint());	
-	console.log(breakpoints.previousBreakpoint);	
-});
+// 	console.log(breakpoints.onPoint());	
+// 	console.log(breakpoints.previousBreakpoint);	
+// });
 
 
-$popularServicesSlider.init = function (){
 
-	// $popularServicesSlider.slick({
+// $popularServicesSlider.init = function (){
 
-	// 		// dots: true,
-	// 		infinite: true,
-	// 		speed: 1000,
-	// 		// autoplay: true,
-	// 		autoplaySpeed: 4000,
-	// 		// variableWidth: false,
-	// 		adaptiveHeight: false
-	// 		// ,
-	// 		// vertical: true
+// 	$popularServicesSlider.slick({
 
-	// });
+// 			// dots: true,
+// 			infinite: true,
+// 			speed: 1000,
+// 			// autoplay: true,
+// 			autoplaySpeed: 4000,
+// 			// variableWidth: false,
+// 			adaptiveHeight: false
+// 			// ,
+// 			// vertical: true
+
+// 	});
 
 	// let $slides = this.slick('getSlick').$slides;
 	
@@ -88,45 +89,50 @@ $popularServicesSlider.init = function (){
 	// 	$popularServicesSlider.slick('slickAdd', $slides[i]);
 	// }
 
-}
-
-
-
-
-$popularServicesSlider.init();
-
-// $popularServicesSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-
-// 	let $slides = $('#popular-services-slider .slick-slide');
-
-// 	for(let i = 0 ; i < $slides.length; i++){
-
-
-// 		let $animatedElements = $('.element-animated', $slides[i]);
-// 		let slideIndex = $($slides[i]).hasClass('slick-current');
-
-// 		if(!$($slides[i]).hasClass('slick-current')){
-
-// 			$animatedElements.removeClass('animation-running')
-// 				// .removeClass('s-current')
-// 				.addClass('animation-paused')		
-// 				.addClass('animation-delay')		
-// 				.each(restartAnimation);
-// 		}
-// 	}
-// });
-
-
-// function restartAnimation(index, element){
-//  	var newElement = element.cloneNode(true);
-//     element.parentNode.replaceChild(newElement, element);
 // }
 
+let onPoint = breakpoints.onPoint();
 
-// $popularServicesSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+if(onPoint !=='-sm'){
 
-// 	let $animatedElements = $('.element-animated', slick.$slides[currentSlide])
-// 		.removeClass('animation-paused')
-// 		.addClass('animation-running')			
-// 		.each(restartAnimation);
-// });
+	$popularServicesSlider.slick({
+        dots: true,
+        infinite: true,
+        speed: 1500,
+        slidesToShow: 1,
+        // autoplay: true,
+        autoplaySpeed: 4000,
+        // variableWidth: false,
+        adaptiveHeight: false
+      
+
+    });
+}
+
+$(window).on('breakpoint.changed', 
+
+	()=> {
+
+		if(breakpoints.previousBreakpoint === '-sm'){
+
+
+			$("#popular-services-slider").slick({
+		        dots: true,
+		        infinite: true,
+		        speed: 1500,
+		        slidesToShow: 1,
+		        // autoplay: true,
+		        autoplaySpeed: 4000,
+		        // variableWidth: false,
+		        adaptiveHeight: false
+		    });
+		}
+		else{
+
+			if(breakpoints.breakpoint === '-sm'){
+
+				$popularServicesSlider.slick('unslick');
+			}
+		}
+
+	});
