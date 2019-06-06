@@ -559,6 +559,140 @@
 
 }
 
+
+
+
+
+
+
+
+@media (min-height: 500px) and (min-width: 768px){
+
+
+
+	.popular-services-slide-wrapper{
+
+		flex-direction: column;
+		flex-wrap: wrap;
+		display: flex;
+		margin-bottom: 30px;
+		height: 50vh;
+		justify-content: flex-end;
+
+	}
+
+	.popular-services-slide__illustration{
+		position: relative;
+		padding-top: 0%;
+		height: 100%;
+		width: 50%;
+		// text-align: center;
+		// display: flex;
+		// justify-content: center;
+
+		img{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+
+			// width: auto;
+			// // height: 100%;
+			width: 110%;
+			height: auto;
+			// flex-grow: 0;
+			
+			@media (max-aspect-ratio: 1400/878){
+				// flex-grow: 0;
+				width: auto;
+				// // height: 100%;
+				height: 100%;
+			}			
+		}
+	}
+
+	.popular-services-slide__title{
+
+		width: 50%;
+
+		// flex-grow: 1;
+		flex-shrink: 1;		
+		padding-bottom: 30px;
+		padding-top: 30px;
+
+		// height: calc((100vw - 240px)*(25 - 10)/(1280 - 240)  + 10px);
+		// flex-basis: 3%;
+		// padding-bottom: calc((100vw - 240px)*(60 - 40)/(1280 - 240)  + 40px);
+		font-size: calc(((100vw - 240px)*(25 - 20)/(1280 - 240)  + 20px));
+
+			@media (max-height: 400px){
+
+				padding-bottom: 1vh;
+				padding-top: 5vh;
+
+				font-size: 5vh;
+
+				// padding-top: 25px;
+				// padding-bottom: 10px;
+			}
+
+			@media (max-height: 300px){
+
+				font-size: 5vh;
+			}	
+			@media (max-height: 240px){
+
+				font-size: calc(4vh + 4px);
+				// font-size: 18px;
+			}			
+
+		// font-size: calc(1vw);
+	}
+
+	.popular-services-slide__description{
+
+		width: 50%;
+		font-size: 40px;
+		flex-basis: 10%;
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		flex-shrink: 1;
+
+		&>div{
+
+
+				padding-bottom: 4vh;
+				padding-top: 4vh;
+
+
+			
+			// font-size: calc(1 / 1vh + 1px);
+			font-size: calc(((100vw - 240px)*(25 - 20)/(1280 - 240)  + 20px));
+
+			@media (max-height: 370px){
+
+				// font-size: 18px;
+				font-size: 4.5vh;
+			}
+
+			@media (max-height: 300px){
+
+				font-size: 5vh;
+			}	
+			@media (max-height: 240px){
+
+				font-size: 5vh;
+			}			
+		}
+	}
+
+}
+
+
+
+
+
 // .popular-services-slide__description,
 // .popular-services-slide__description>.slick-list.draggable,
 // .popular-services-slide__description>.slick-list.draggable>.slick-track,
@@ -1093,3 +1227,10 @@
 	// display: none !important; 
 	background-color: blue;
 }
+
+.svg_test, .svg_test * {
+
+	outline: 1px solid red;
+}
+
+.svg_test text {text-anchor: middle;}
